@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <>
       <motion.nav 
-        className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg border-b border-amber-200 dark:border-amber-800 transition-colors duration-300"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-sm shadow-lg border-b border-amber-200 dark:border-orange-600 transition-colors duration-300"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -28,10 +28,10 @@ export const Navbar = () => {
                 whileHover={{ rotate: 15, scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Coffee className="h-8 w-8 text-amber-600 dark:text-amber-400 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-amber-200" />
+                <Coffee className="h-8 w-8 text-amber-600 dark:text-orange-500 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-orange-400" />
               </motion.div>
               <motion.span 
-                className="text-xl font-bold tracking-wide text-amber-900 dark:text-amber-100 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-amber-200"
+                className="text-xl font-bold tracking-wide text-amber-900 dark:text-gray-200 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-gray-100"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
@@ -49,7 +49,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/" 
-                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-gray-300 hover:text-amber-900 dark:hover:text-gray-100 transition-colors duration-200 font-medium"
                 >
                   Home
                 </Link>
@@ -57,7 +57,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/menu" 
-                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-gray-300 hover:text-amber-900 dark:hover:text-gray-100 transition-colors duration-200 font-medium"
                 >
                   Menu
                 </Link>
@@ -65,7 +65,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/about" 
-                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-gray-300 hover:text-amber-900 dark:hover:text-gray-100 transition-colors duration-200 font-medium"
                 >
                   About
                 </Link>
@@ -73,7 +73,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/contact" 
-                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-gray-300 hover:text-amber-900 dark:hover:text-gray-100 transition-colors duration-200 font-medium"
                 >
                   Contact
                 </Link>

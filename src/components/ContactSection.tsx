@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export const ContactSection = () => {
   return (
     <motion.section 
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-100 dark:from-slate-800 dark:to-slate-900 transition-colors duration-500"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-100 dark:from-gray-950 dark:to-black transition-colors duration-500"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -23,7 +23,7 @@ export const ContactSection = () => {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-4xl lg:text-5xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300"
+            className="text-4xl lg:text-5xl font-bold text-amber-900 dark:text-gray-200 mb-4 transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -32,7 +32,7 @@ export const ContactSection = () => {
             Visit Us Today
           </motion.h2>
           <motion.p 
-            className="text-xl text-amber-700 dark:text-amber-300 font-medium transition-colors duration-300"
+            className="text-xl text-amber-700 dark:text-gray-400 font-medium transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -47,7 +47,7 @@ export const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-amber-900 dark:text-amber-100 mb-6 transition-colors duration-300">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-amber-900 dark:text-gray-200 mb-6 transition-colors duration-300">Get in Touch</h3>
               <div className="space-y-6">
                 
                 <div className="flex items-start space-x-4">
@@ -57,39 +57,39 @@ export const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 transition-colors duration-300">Location</h4>
                     <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">123 Coffee Street</p>
-                    <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Downtown District, City 12345</p>
+                    <p className="text-amber-700 dark:text-gray-400 transition-colors duration-300">Downtown District, City 12345</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-amber-600 dark:bg-amber-700 p-3 rounded-lg transition-colors duration-300">
+                  <div className="bg-amber-600 dark:bg-orange-600 p-3 rounded-lg transition-colors duration-300">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 transition-colors duration-300">Phone</h4>
-                    <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">(555) 123-CAFE</p>
-                    <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">(555) 123-2233</p>
+                    <h4 className="font-semibold text-amber-900 dark:text-gray-200 mb-1 transition-colors duration-300">Phone</h4>
+                    <p className="text-amber-700 dark:text-gray-400 transition-colors duration-300">(555) 123-CAFE</p>
+                    <p className="text-amber-700 dark:text-gray-400 transition-colors duration-300">(555) 123-2233</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-amber-600 dark:bg-amber-700 p-3 rounded-lg transition-colors duration-300">
+                  <div className="bg-amber-600 dark:bg-orange-600 p-3 rounded-lg transition-colors duration-300">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 transition-colors duration-300">Email</h4>
-                    <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">hello@jojocafe.com</p>
-                    <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">orders@jojocafe.com</p>
+                    <h4 className="font-semibold text-amber-900 dark:text-gray-200 mb-1 transition-colors duration-300">Email</h4>
+                    <p className="text-amber-700 dark:text-gray-400 transition-colors duration-300">hello@jojocafe.com</p>
+                    <p className="text-amber-700 dark:text-gray-400 transition-colors duration-300">orders@jojocafe.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-amber-600 dark:bg-amber-700 p-3 rounded-lg transition-colors duration-300">
+                  <div className="bg-amber-600 dark:bg-orange-600 p-3 rounded-lg transition-colors duration-300">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 transition-colors duration-300">Hours</h4>
-                    <div className="text-amber-700 dark:text-amber-300 space-y-1 transition-colors duration-300">
+                    <h4 className="font-semibold text-amber-900 dark:text-gray-200 mb-1 transition-colors duration-300">Hours</h4>
+                    <div className="text-amber-700 dark:text-gray-400 space-y-1 transition-colors duration-300">
                       <p>Monday - Friday: 6:00 AM - 8:00 PM</p>
                       <p>Saturday: 7:00 AM - 9:00 PM</p>
                       <p>Sunday: 7:00 AM - 7:00 PM</p>

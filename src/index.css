@@ -1,10 +1,10 @@
 /* Dark mode override styles */
 .dark .bg-white {
-  background-color: rgb(30 41 59) !important; /* slate-800 */
+  background-color: rgb(20 20 20) !important; /* Very dark gray */
 }
 
 .dark .border-amber-200 {
-  border-color: rgb(180 83 9) !important; /* amber-700 */
+  border-color: rgb(234 88 12) !important; /* Orange border */
 }
 
 /* Rest of existing styles */
@@ -56,39 +56,39 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode - Deep Coffee Theme */
-    --background: 45 13% 9%;             /* Very dark brown */
-    --foreground: 45 23% 95%;            /* Light amber text */
+    /* Dark mode - Black, Gray, Orange Theme */
+    --background: 0 0% 8%;               /* Pure black background */
+    --foreground: 0 0% 85%;              /* Light gray text */
 
-    --card: 45 13% 12%;                  /* Dark brown cards */
-    --card-foreground: 45 23% 95%;
+    --card: 0 0% 12%;                    /* Very dark gray cards */
+    --card-foreground: 0 0% 85%;
 
-    --popover: 45 13% 9%;
-    --popover-foreground: 45 23% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 85%;
 
-    --primary: 45 93% 47%;               /* Amber-600 (same) */
-    --primary-foreground: 45 13% 9%;
+    --primary: 22 100% 52%;              /* Orange primary */
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 45 13% 15%;             /* Darker brown */
-    --secondary-foreground: 45 23% 95%;
+    --secondary: 0 0% 15%;               /* Dark gray */
+    --secondary-foreground: 0 0% 85%;
 
-    --muted: 45 13% 15%;
-    --muted-foreground: 45 23% 63%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 45 93% 47%;
-    --accent-foreground: 45 13% 9%;
+    --accent: 22 100% 52%;               /* Orange accent */
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 45 13% 18%;                /* Dark border */
-    --input: 45 13% 15%;
-    --ring: 45 93% 47%;
+    --border: 0 0% 20%;                  /* Dark gray border */
+    --input: 0 0% 15%;
+    --ring: 22 100% 52%;
 
-    --sidebar-background: 45 13% 12%;
-    --sidebar-foreground: 45 23% 95%;
-    --sidebar-border: 45 13% 18%;
-    --sidebar-ring: 45 93% 47%;
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 22 100% 52%;
   }
 }
 
