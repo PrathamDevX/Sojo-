@@ -1,3 +1,13 @@
+/* Dark mode override styles */
+.dark .bg-white {
+  background-color: rgb(30 41 59) !important; /* slate-800 */
+}
+
+.dark .border-amber-200 {
+  border-color: rgb(180 83 9) !important; /* amber-700 */
+}
+
+/* Rest of existing styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

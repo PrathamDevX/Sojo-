@@ -116,9 +116,9 @@ export const ContactSection = () => {
 
           {/* Map/Location Card */}
           <div className="space-y-6">
-            <Card className="bg-white dark:bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
+            <Card className="bg-white dark:!bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
               <h3 className="text-xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300">Find Us</h3>
-              <div className="bg-amber-100 dark:bg-amber-900/30 h-64 rounded-lg flex items-center justify-center border-2 border-amber-300 dark:border-amber-600 transition-colors duration-300">
+              <div className="bg-amber-100 dark:!bg-slate-700 h-64 rounded-lg flex items-center justify-center border-2 border-amber-300 dark:border-amber-600 transition-colors duration-300">
                 <div className="text-center">
                   <MapPin className="h-12 w-12 text-amber-600 dark:text-amber-400 mx-auto mb-2 transition-colors duration-300" />
                   <p className="text-amber-800 dark:text-amber-200 font-medium transition-colors duration-300">Interactive Map</p>
@@ -138,7 +138,7 @@ export const ContactSection = () => {
               </div>
             </Card>
 
-            <Card className="bg-white dark:bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
+            <Card className="bg-white dark:!bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
               <h3 className="text-xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300">Special Services</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">

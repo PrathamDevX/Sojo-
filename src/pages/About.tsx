@@ -51,7 +51,7 @@ const About = () => {
 
             {/* Values */}
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
+              <div className="bg-white dark:!bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
                 <Heart className="h-12 w-12 text-amber-600 dark:text-amber-400 mx-auto mb-4 transition-colors duration-300" />
                 <h3 className="text-xl font-semibold text-amber-900 dark:text-amber-100 mb-2 transition-colors duration-300">Made with Love</h3>
                 <p className="text-amber-700 dark:text-amber-300 text-sm transition-colors duration-300">
@@ -59,7 +59,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
+              <div className="bg-white dark:!bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
                 <Users className="h-12 w-12 text-amber-600 dark:text-amber-400 mx-auto mb-4 transition-colors duration-300" />
                 <h3 className="text-xl font-semibold text-amber-900 dark:text-amber-100 mb-2 transition-colors duration-300">Community</h3>
                 <p className="text-amber-700 dark:text-amber-300 text-sm transition-colors duration-300">
@@ -67,7 +67,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
+              <div className="bg-white dark:!bg-slate-800 p-6 rounded-xl text-center shadow-lg border border-amber-200 dark:border-amber-700 transition-colors duration-300">
                 <Coffee className="h-12 w-12 text-amber-600 dark:text-amber-400 mx-auto mb-4 transition-colors duration-300" />
                 <h3 className="text-xl font-semibold text-amber-900 dark:text-amber-100 mb-2 transition-colors duration-300">Full Menu</h3>
                 <p className="text-amber-700 dark:text-amber-300 text-sm transition-colors duration-300">
