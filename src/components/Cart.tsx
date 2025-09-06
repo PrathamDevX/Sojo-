@@ -42,20 +42,9 @@ export const Cart = ({ isOpen, onClose, items, onUpdateQuantity, onRemoveItem, o
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-md bg-white dark:bg-[#0f0f0f] border border-amber-200 dark:border-[#a13f1f] transition-colors duration-300">
         <DialogHeader>
-          <DialogTitle className="flex items-center justify-between text-amber-900 dark:text-amber-100 transition-colors duration-300">
-            <div className="flex items-center gap-2">
-              <ShoppingBag className="h-5 w-5" />
-              Your Cart ({itemCount} items)
-            </div>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={onClose}
-              className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-              title="Close cart"
-            >
-              <X className="h-4 w-4" />
-            </Button>
+          <DialogTitle className="flex items-center gap-2 text-amber-900 dark:text-amber-100 transition-colors duration-300">
+            <ShoppingBag className="h-5 w-5" />
+            Your Cart ({itemCount} items)
           </DialogTitle>
         </DialogHeader>
 
