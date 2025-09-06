@@ -118,48 +118,48 @@ export const ContactSection = () => {
           <div className="space-y-6">
             <Card className="bg-white dark:bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
               <h3 className="text-xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300">Find Us</h3>
-              <div className="bg-amber-100 h-64 rounded-lg flex items-center justify-center border-2 border-amber-300">
+              <div className="bg-amber-100 dark:bg-amber-900/30 h-64 rounded-lg flex items-center justify-center border-2 border-amber-300 dark:border-amber-600 transition-colors duration-300">
                 <div className="text-center">
-                  <MapPin className="h-12 w-12 text-amber-600 mx-auto mb-2" />
-                  <p className="text-amber-800 font-medium">Interactive Map</p>
-                  <p className="text-sm text-amber-600">Click to open in Maps</p>
+                  <MapPin className="h-12 w-12 text-amber-600 dark:text-amber-400 mx-auto mb-2 transition-colors duration-300" />
+                  <p className="text-amber-800 dark:text-amber-200 font-medium transition-colors duration-300">Interactive Map</p>
+                  <p className="text-sm text-amber-600 dark:text-amber-400 transition-colors duration-300">Click to open in Maps</p>
                 </div>
               </div>
               <div className="mt-4 space-y-2">
-                <p className="text-sm text-amber-700">
+                <p className="text-sm text-amber-700 dark:text-amber-300 transition-colors duration-300">
                   <strong>Parking:</strong> Street parking available
                 </p>
-                <p className="text-sm text-amber-700">
+                <p className="text-sm text-amber-700 dark:text-amber-300 transition-colors duration-300">
                   <strong>Public Transit:</strong> Bus stops nearby
                 </p>
-                <p className="text-sm text-amber-700">
+                <p className="text-sm text-amber-700 dark:text-amber-300 transition-colors duration-300">
                   <strong>Accessibility:</strong> Wheelchair accessible
                 </p>
               </div>
             </Card>
 
-            <Card className="bg-white p-6 border border-amber-200 shadow-lg">
-              <h3 className="text-xl font-bold text-amber-900 mb-4">Special Services</h3>
+            <Card className="bg-white dark:bg-slate-800 p-6 border border-amber-200 dark:border-amber-700 shadow-lg transition-colors duration-300">
+              <h3 className="text-xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300">Special Services</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
-                  <p className="text-amber-700">Free WiFi</p>
+                  <div className="w-3 h-3 bg-amber-600 dark:bg-amber-400 rounded-full transition-colors duration-300"></div>
+                  <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Free WiFi</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
-                  <p className="text-amber-700">Catering Services</p>
+                  <div className="w-3 h-3 bg-amber-600 dark:bg-amber-400 rounded-full transition-colors duration-300"></div>
+                  <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Catering Services</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
-                  <p className="text-amber-700">Private Events</p>
+                  <div className="w-3 h-3 bg-amber-600 dark:bg-amber-400 rounded-full transition-colors duration-300"></div>
+                  <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Private Events</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
-                  <p className="text-amber-700">Online Ordering</p>
+                  <div className="w-3 h-3 bg-amber-600 dark:bg-amber-400 rounded-full transition-colors duration-300"></div>
+                  <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Online Ordering</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
-                  <p className="text-amber-700">Loyalty Program</p>
+                  <div className="w-3 h-3 bg-amber-600 dark:bg-amber-400 rounded-full transition-colors duration-300"></div>
+                  <p className="text-amber-700 dark:text-amber-300 transition-colors duration-300">Loyalty Program</p>
                 </div>
               </div>
             </Card>
