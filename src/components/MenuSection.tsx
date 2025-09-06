@@ -125,31 +125,41 @@ export const MenuSection = () => {
 
         {/* Menu Items Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
         >
           {menuItems[activeCategory as keyof typeof menuItems].map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 1.2 + index * 0.15,
+                ease: [0.25, 0.25, 0.25, 0.75],
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.03,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.12)"
+              }}
+              whileTap={{ scale: 0.97 }}
             >
-              <Card className="bg-white p-0 overflow-hidden group shadow-xl border border-amber-200 hover:shadow-2xl transition-all duration-300">
+              <Card className="bg-white p-0 overflow-hidden group shadow-xl border border-amber-200 hover:shadow-2xl transition-all duration-500">
                 <motion.div 
                   className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 relative overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  <div className="absolute inset-0 bg-amber-100/50 group-hover:bg-amber-100/70 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-amber-100/50 group-hover:bg-amber-100/70 transition-colors duration-500" />
                   <motion.div 
                     className="absolute bottom-4 left-4"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ duration: 0.3 }}
                   >
                     <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold text-lg">{item.name.charAt(0)}</span>

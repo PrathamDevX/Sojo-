@@ -269,4 +269,45 @@ All colors MUST be HSL.
   .btn-animate:hover::before {
     left: 100%;
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* Reduce animation intensity on mobile */
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* Smoother touch interactions */
+    .touch-smooth {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+  }
+
+  /* Performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
