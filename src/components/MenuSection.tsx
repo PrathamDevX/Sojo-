@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { motion } from "framer-motion";
 
 const categories = [
   { id: "hot", name: "Hot Drinks" },
@@ -67,45 +68,94 @@ export const MenuSection = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-amber-900 mb-4">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2 
+            className="text-4xl lg:text-5xl font-bold text-amber-900 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Our Menu
-          </h2>
-          <p className="text-xl text-amber-700 font-medium">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-amber-700 font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             Made fresh daily with the finest ingredients
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Category Pills */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          {categories.map((category, index) => (
+            <motion.div
               key={category.id}
-              variant={activeCategory === category.id ? "default" : "outline"}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 font-medium ${
-                activeCategory === category.id
-                  ? "bg-amber-600 text-white shadow-lg"
-                  : "border-amber-300 text-amber-700 hover:bg-amber-100 bg-white"
-              }`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {category.name}
-            </Button>
+              <Button
+                variant={activeCategory === category.id ? "default" : "outline"}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-6 py-2 rounded-full transition-all duration-300 font-medium ${
+                  activeCategory === category.id
+                    ? "bg-amber-600 text-white shadow-lg"
+                    : "border-amber-300 text-amber-700 hover:bg-amber-100 bg-white"
+                }`}
+              >
+                {category.name}
+              </Button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Menu Items Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems[activeCategory as keyof typeof menuItems].map((item) => (
-            <Card key={item.id} className="bg-white p-0 overflow-hidden group shadow-xl border border-amber-200 hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-amber-100/50 group-hover:bg-amber-100/70 transition-colors duration-300" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">{item.name.charAt(0)}</span>
-                  </div>
-                </div>
-              </div>
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          {menuItems[activeCategory as keyof typeof menuItems].map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Card className="bg-white p-0 overflow-hidden group shadow-xl border border-amber-200 hover:shadow-2xl transition-all duration-300">
+                <motion.div 
+                  className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 relative overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="absolute inset-0 bg-amber-100/50 group-hover:bg-amber-100/70 transition-colors duration-300" />
+                  <motion.div 
+                    className="absolute bottom-4 left-4"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center shadow-lg">
+                      <span className="text-white font-bold text-lg">{item.name.charAt(0)}</span>
+                    </div>
+                  </motion.div>
+                </motion.div>
               
               <div className="p-6 space-y-4">
                 <div>
@@ -119,41 +169,61 @@ export const MenuSection = () => {
                   </span>
                   
                   <div className="flex items-center space-x-3">
-                    <Button
-                      size="sm"
-                      onClick={() => updateQuantity(item.id, -1)}
-                      disabled={!quantities[item.id]}
-                      className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <Minus className="h-4 w-4" />
-                    </Button>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                      <Button
+                        size="sm"
+                        onClick={() => updateQuantity(item.id, -1)}
+                        disabled={!quantities[item.id]}
+                        className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                      >
+                        <Minus className="h-4 w-4" />
+                      </Button>
+                    </motion.div>
                     
-                    <span className="text-amber-900 font-bold w-8 text-center">
+                    <motion.span 
+                      className="text-amber-900 font-bold w-8 text-center"
+                      key={quantities[item.id] || 0}
+                      initial={{ scale: 1.2 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       {quantities[item.id] || 0}
-                    </span>
+                    </motion.span>
                     
-                    <Button
-                      size="sm"
-                      onClick={() => updateQuantity(item.id, 1)}
-                      className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500"
-                    >
-                      <Plus className="h-4 w-4" />
-                    </Button>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                      <Button
+                        size="sm"
+                        onClick={() => updateQuantity(item.id, 1)}
+                        className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500 transition-all duration-200"
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </motion.div>
                   </div>
                 </div>
                 
                 {quantities[item.id] > 0 && (
-                  <Button 
-                    onClick={() => handleAddToCart(item)}
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium shadow-lg"
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    Add to Cart - ${(item.price * quantities[item.id]).toFixed(2)}
-                  </Button>
+                    <Button 
+                      onClick={() => handleAddToCart(item)}
+                      className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium shadow-lg transition-all duration-300"
+                    >
+                      Add to Cart - ${(item.price * quantities[item.id]).toFixed(2)}
+                    </Button>
+                  </motion.div>
                 )}
               </div>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
