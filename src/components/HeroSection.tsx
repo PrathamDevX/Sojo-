@@ -17,12 +17,12 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-amber-950 dark:via-orange-950 dark:to-yellow-950 transition-colors duration-500">
       {/* Warm Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-32 w-48 h-48 bg-orange-200 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-yellow-200 rounded-full blur-2xl"></div>
+      <div className="absolute inset-0 opacity-10 dark:opacity-20">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-200 dark:bg-amber-800 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-32 w-48 h-48 bg-orange-200 dark:bg-orange-800 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-yellow-200 dark:bg-yellow-800 rounded-full blur-2xl"></div>
       </div>
 
       {/* Content */}
@@ -64,15 +64,15 @@ export const HeroSection = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <Coffee className="h-10 w-10 text-amber-700" />
+                  <Coffee className="h-10 w-10 text-amber-700 dark:text-amber-300 transition-colors duration-300" />
                 </motion.div>
-                <span className="text-sm font-medium tracking-wide text-amber-700 uppercase">
+                <span className="text-sm font-medium tracking-wide text-amber-700 dark:text-amber-300 uppercase transition-colors duration-300">
                   Welcome to
                 </span>
               </motion.div>
               
               <motion.h1 
-                className="text-5xl lg:text-6xl font-bold text-amber-900 leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-amber-900 dark:text-amber-100 leading-tight transition-colors duration-300"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -83,7 +83,7 @@ export const HeroSection = () => {
               >
                 Sojo
                 <motion.span 
-                  className="block text-orange-700"
+                  className="block text-orange-700 dark:text-orange-300 transition-colors duration-300"
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
@@ -97,7 +97,7 @@ export const HeroSection = () => {
               </motion.h1>
               
               <motion.p 
-                className="text-lg text-amber-800 leading-relaxed max-w-lg"
+                className="text-lg text-amber-800 dark:text-amber-200 leading-relaxed max-w-lg transition-colors duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 

@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { Cart } from "@/components/Cart";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
@@ -14,7 +15,7 @@ export const Navbar = () => {
   return (
     <>
       <motion.nav 
-        className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-amber-200"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-amber-200 dark:border-amber-800 transition-colors duration-300"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -27,10 +28,10 @@ export const Navbar = () => {
                 whileHover={{ rotate: 15, scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Coffee className="h-8 w-8 text-amber-600 transition-colors duration-200 group-hover:text-amber-800" />
+                <Coffee className="h-8 w-8 text-amber-600 dark:text-amber-400 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-amber-200" />
               </motion.div>
               <motion.span 
-                className="text-xl font-bold tracking-wide text-amber-900 transition-colors duration-200 group-hover:text-amber-800"
+                className="text-xl font-bold tracking-wide text-amber-900 dark:text-amber-100 transition-colors duration-200 group-hover:text-amber-800 dark:group-hover:text-amber-200"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
@@ -48,7 +49,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/" 
-                  className="text-amber-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
                 >
                   Home
                 </Link>
@@ -56,7 +57,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/menu" 
-                  className="text-amber-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
                 >
                   Menu
                 </Link>
@@ -64,7 +65,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/about" 
-                  className="text-amber-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
                 >
                   About
                 </Link>
@@ -72,7 +73,7 @@ export const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   to="/contact" 
-                  className="text-amber-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 transition-colors duration-200 font-medium"
                 >
                   Contact
                 </Link>
@@ -96,7 +97,7 @@ export const Navbar = () => {
                   variant="ghost" 
                   size="sm" 
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-amber-700 hover:text-amber-900 hover:bg-amber-50"
+                  className="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors duration-200"
                 >
                   <AnimatePresence mode="wait">
                     {isMobileMenuOpen ? (
@@ -124,13 +125,16 @@ export const Navbar = () => {
                 </Button>
               </motion.div>
 
+              {/* Theme Toggle */}
+              <ThemeToggle />
+
               {/* Cart Button */}
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   variant="ghost" 
                   size="sm" 
                   onClick={() => setIsCartOpen(true)}
-                  className="relative text-amber-700 hover:text-amber-900 hover:bg-amber-50 transition-all duration-200"
+                  className="relative text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-200"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   {getTotalItems() > 0 && (
@@ -164,7 +168,7 @@ export const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl border-b border-amber-200 z-40"
+              className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-xl border-b border-amber-200 dark:border-amber-800 z-40"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -192,7 +196,7 @@ export const Navbar = () => {
                     <Link 
                       to={item.to}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-lg font-medium text-amber-700 hover:text-amber-900 py-3 px-2 rounded-lg hover:bg-amber-50 transition-all duration-200"
+                      className="block text-lg font-medium text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 py-3 px-2 rounded-lg hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-200"
                     >
                       {item.label}
                     </Link>

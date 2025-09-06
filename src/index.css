@@ -8,96 +8,77 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Emerald Design System - Premium Dark Aesthetic */
-    --emerald-900: 200 45% 8%;      /* #0F2027 equivalent in HSL */
-    --emerald-700: 150 42% 25%;     /* #28623A equivalent in HSL */
-    --emerald-accent: 145 55% 55%;  /* #56C27A equivalent in HSL */
-    --emerald-light: 145 55% 85%;   /* Light emerald for accents */
-    
-    /* Semantic tokens based on emerald palette */
-    --background: var(--emerald-900);
-    --foreground: 0 0% 98%;
+    /* Light mode - Amber Cafe Theme */
+    --background: 45 100% 98%;           /* Very light amber */
+    --foreground: 45 84% 8%;             /* Dark amber text */
 
-    --card: 200 45% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;                   /* White cards */
+    --card-foreground: 45 84% 8%;        /* Dark amber text */
 
-    --popover: 200 45% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 45 84% 8%;
 
-    --primary: var(--emerald-700);
-    --primary-foreground: 0 0% 98%;
+    --primary: 45 93% 47%;               /* Amber-600 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 45% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 45 84% 94%;             /* Amber-100 */
+    --secondary-foreground: 45 84% 8%;
 
-    --muted: 200 45% 18%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 45 84% 94%;
+    --muted-foreground: 45 23% 46%;
 
-    --accent: var(--emerald-accent);
-    --accent-foreground: var(--emerald-900);
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 200 45% 20%;
-    --input: 200 45% 18%;
-    --ring: var(--emerald-accent);
+    --border: 45 74% 85%;                /* Amber-200 */
+    --input: 45 84% 94%;
+    --ring: 45 93% 47%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - Deep Coffee Theme */
+    --background: 45 13% 9%;             /* Very dark brown */
+    --foreground: 45 23% 95%;            /* Light amber text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 45 13% 12%;                  /* Dark brown cards */
+    --card-foreground: 45 23% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 45 13% 9%;
+    --popover-foreground: 45 23% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 93% 47%;               /* Amber-600 (same) */
+    --primary-foreground: 45 13% 9%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 45 13% 15%;             /* Darker brown */
+    --secondary-foreground: 45 23% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 45 13% 15%;
+    --muted-foreground: 45 23% 63%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 45 13% 9%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 45 13% 18%;                /* Dark border */
+    --input: 45 13% 15%;
+    --ring: 45 93% 47%;
+
+    --sidebar-background: 45 13% 12%;
+    --sidebar-foreground: 45 23% 95%;
+    --sidebar-border: 45 13% 18%;
+    --sidebar-ring: 45 93% 47%;
   }
 }
 
@@ -109,8 +90,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-weight: 300;
-    background: linear-gradient(180deg, hsl(var(--emerald-700)) 0%, hsl(var(--emerald-900)) 100%);
-    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

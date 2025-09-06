@@ -64,7 +64,7 @@ export const MenuSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-amber-50 to-orange-50 min-h-screen">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-amber-50 to-orange-50 dark:from-slate-900 dark:to-slate-800 min-h-screen transition-colors duration-500">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -75,7 +75,7 @@ export const MenuSection = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h2 
-            className="text-4xl lg:text-5xl font-bold text-amber-900 mb-4"
+            className="text-4xl lg:text-5xl font-bold text-amber-900 dark:text-amber-100 mb-4 transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -83,7 +83,7 @@ export const MenuSection = () => {
             Our Menu
           </motion.h2>
           <motion.p 
-            className="text-xl text-amber-700 font-medium"
+            className="text-xl text-amber-700 dark:text-amber-300 font-medium transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -113,8 +113,8 @@ export const MenuSection = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 font-medium ${
                   activeCategory === category.id
-                    ? "bg-amber-600 text-white shadow-lg"
-                    : "border-amber-300 text-amber-700 hover:bg-amber-100 bg-white"
+                    ? "bg-amber-600 dark:bg-amber-700 text-white shadow-lg"
+                    : "border-amber-300 dark:border-amber-600 text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-900/20 bg-white dark:bg-slate-800"
                 }`}
               >
                 {category.name}
@@ -149,19 +149,19 @@ export const MenuSection = () => {
               }}
               whileTap={{ scale: 0.97 }}
             >
-              <Card className="bg-white p-0 overflow-hidden group shadow-xl border border-amber-200 hover:shadow-2xl transition-all duration-500">
+              <Card className="bg-white dark:bg-slate-800 p-0 overflow-hidden group shadow-xl border border-amber-200 dark:border-amber-700 hover:shadow-2xl transition-all duration-500">
                 <motion.div 
-                  className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 relative overflow-hidden"
+                  className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-800 dark:to-orange-800 relative overflow-hidden"
                   whileHover={{ scale: 1.08 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  <div className="absolute inset-0 bg-amber-100/50 group-hover:bg-amber-100/70 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-amber-100/50 dark:bg-amber-900/50 group-hover:bg-amber-100/70 dark:group-hover:bg-amber-900/70 transition-colors duration-500" />
                   <motion.div 
                     className="absolute bottom-4 left-4"
                     whileHover={{ scale: 1.15, rotate: 8 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 bg-amber-600 dark:bg-amber-700 rounded-lg flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold text-lg">{item.name.charAt(0)}</span>
                     </div>
                   </motion.div>
@@ -169,12 +169,12 @@ export const MenuSection = () => {
               
               <div className="p-6 space-y-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-amber-900 mb-2">{item.name}</h3>
-                  <p className="text-amber-700 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-amber-900 dark:text-amber-100 mb-2 transition-colors duration-300">{item.name}</h3>
+                  <p className="text-amber-700 dark:text-amber-300 text-sm leading-relaxed transition-colors duration-300">{item.description}</p>
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-amber-800">
+                  <span className="text-2xl font-bold text-amber-800 dark:text-amber-200 transition-colors duration-300">
                     ${item.price.toFixed(2)}
                   </span>
                   
@@ -184,14 +184,14 @@ export const MenuSection = () => {
                         size="sm"
                         onClick={() => updateQuantity(item.id, -1)}
                         disabled={!quantities[item.id]}
-                        className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                        className="h-8 w-8 p-0 bg-amber-200 dark:bg-amber-800 border-2 border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-300 dark:hover:bg-amber-700 hover:border-amber-500 dark:hover:border-amber-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                       >
                         <Minus className="h-4 w-4" />
                       </Button>
                     </motion.div>
                     
                     <motion.span 
-                      className="text-amber-900 font-bold w-8 text-center"
+                      className="text-amber-900 dark:text-amber-100 font-bold w-8 text-center transition-colors duration-300"
                       key={quantities[item.id] || 0}
                       initial={{ scale: 1.2 }}
                       animate={{ scale: 1 }}
@@ -204,7 +204,7 @@ export const MenuSection = () => {
                       <Button
                         size="sm"
                         onClick={() => updateQuantity(item.id, 1)}
-                        className="h-8 w-8 p-0 bg-amber-200 border-2 border-amber-400 text-amber-800 hover:bg-amber-300 hover:border-amber-500 transition-all duration-200"
+                        className="h-8 w-8 p-0 bg-amber-200 dark:bg-amber-800 border-2 border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-300 dark:hover:bg-amber-700 hover:border-amber-500 dark:hover:border-amber-500 transition-all duration-200"
                       >
                         <Plus className="h-4 w-4" />
                       </Button>
@@ -223,7 +223,7 @@ export const MenuSection = () => {
                   >
                     <Button 
                       onClick={() => handleAddToCart(item)}
-                      className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium shadow-lg transition-all duration-300"
+                      className="w-full bg-amber-600 dark:bg-amber-700 hover:bg-amber-700 dark:hover:bg-amber-600 text-white font-medium shadow-lg transition-all duration-300"
                     >
                       Add to Cart - ${(item.price * quantities[item.id]).toFixed(2)}
                     </Button>
